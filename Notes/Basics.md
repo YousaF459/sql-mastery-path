@@ -22,7 +22,7 @@ FROM "USERS";
 
 ---
 
-# 🔥 Column renaming OR TABLE renaming ALIAS
+#  Column renaming OR TABLE renaming ALIAS
 We can used ALIAS USING ( AS ) for Column Names or Table Names
 
 SELECT name AS "Full Name" 
@@ -123,4 +123,85 @@ Used to explain queries and improve readability.
 
 ---
 
+# ✅ AND vs OR in SQL
 
+### 🔹 1. AND → all conditions must be true
+SELECT *
+FROM employees
+WHERE salary > 50000 AND department = 'IT';
+
+Returns rows where:
+
+salary > 50000
+AND
+department is IT
+
+✔ Both must be true
+
+### 🔹 2. OR → at least one condition must be true
+SELECT *
+FROM employees
+WHERE salary > 50000 OR department = 'IT';
+
+Returns rows where:
+
+salary > 50000
+OR
+department is IT
+
+✔ Even one true → row included
+
+
+--- 
+
+# NOT KEYWORD
+Not is used to negate a condition 
+
+SELECT *
+FROM table_name
+WHERE NOT condition;
+
+### Example 1
+SELECT *
+FROM employees
+WHERE NOT department = 'IT';
+
+👉 Means:
+
+Show employees NOT in IT department
+
+### Simple way to remember
+NOT = opposite condition
+Think: “exclude this”
+
+
+---
+
+# Difference: Logical vs Comparison Operators
+
+### Logical operators 
+are used to combine multiple conditions
+
+They work on:
+
+TRUE / FALSE results of conditions
+
+combine true adn false results
+
+### Comparison operators
+used to compare two values
+
+they return false or true
+work on Compare values and single condition.
+
+---
+# SQL Operator Precedence (Simple Order)
+
+👉 Highest to lowest:
+
+Brackets ()
+DMAS
+Comparisn operators > = < 
+NOT
+AND
+OR
