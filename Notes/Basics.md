@@ -197,11 +197,144 @@ work on Compare values and single condition.
 ---
 # SQL Operator Precedence (Simple Order)
 
-👉 Highest to lowest:
+Highest to lowest:
 
 Brackets ()
-DMAS
-Comparisn operators > = < 
 NOT
 AND
 OR
+
+---
+
+# NULL IN SQL
+in sql null means "missing/unknown value"
+we can use = or != with NULL.
+
+COMMON MISTAKE :-
+SELECT * FROM USERS
+WHERE salary=null;
+
+NULL = NULL → not TRUE
+NULL != NULL → also not TRUE
+
+null = unknow value
+we cannot check unknow with anything
+
+### CORRECT WAY
+🔹 Check for NULL
+SELECT *
+FROM employees
+WHERE salary IS NULL;
+🔹 Check for NOT NULL
+SELECT *
+FROM employees
+WHERE salary IS NOT NULL;
+
+### NULL Checking
+
+Use:
+- IS NULL
+- IS NOT NULL
+
+Never use:
+- = NULL
+- != NULL
+
+Reason:
+NULL means unknown value, so it cannot be compared.
+
+---
+# BETWEEN
+WE CAN use between to check if soemthing lies in a range.
+
+### EXAMPLE
+SELECT *
+FROM table_name
+WHERE column BETWEEN value1 AND value2;
+
+### Example (dates)
+SELECT *
+FROM orders
+WHERE order_date BETWEEN '2025-01-01' AND '2025-12-31';
+
+---
+
+# IN Keyword in SQL
+
+IF we have to check a value exist in  a list of multiple values
+
+### EXAMPLE 1
+SELECT * FROM USERS
+WHERE column  IN (10,20,30);
+
+### Example 2 
+SELECT *
+FROM employees
+WHERE department IN ('IT', 'HR', 'Finance');
+
+### EXAMPLE 3
+NOT IN
+SELECT *
+FROM employees
+WHERE department NOT IN ('IT', 'HR');
+
+
+--- 
+
+# LIKE KEYWORD
+LIKE is used to search patterns in a string
+It’s important for filtering names, emails 
+
+### EXAMPLE
+SELECT *
+FROM table_name
+WHERE column LIKE pattern;
+
+% → any number of characters
+SELECT *
+FROM employees
+WHERE name LIKE 'A%';
+Starts with A
+
+
+_ → single character
+WHERE name LIKE 'A__';
+
+Matches:
+Ali  (A + 2 letters)
+
+NOT LIKE
+SELECT *
+FROM employees
+WHERE name NOT LIKE 'A%';
+
+### Using ILIKE (case-insensitive)
+SELECT *
+FROM employees
+WHERE name ILIKE 'a%';
+
+Matches:
+Ali 
+ali 
+AHMAD 
+
+---
+
+# DISTINCT
+it is used to filter duplciates
+DISTINCT = “only unique values”
+
+SELECT DISTINCT column_name
+FROM table_name;
+
+Used to remove duplicate values from query results.
+
+Example:
+SELECT DISTINCT city
+FROM employees;
+
+With multiple columns:
+SELECT DISTINCT department, city
+FROM employees;
+
+---
