@@ -23,6 +23,9 @@ The result format is in the following example.
 */
 
 
+-- use group by on user_id colum to make group for each user like user_id 1(followers_id 1,2,3,4)
+-- we use count to get total count from each group.
+
 SELECT user_id,COUNT(follower_id) AS "followers_count" FROM Followers
 GROUP BY user_id
 ORDER BY user_id ASC;
