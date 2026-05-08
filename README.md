@@ -13,6 +13,6 @@ This repository documents my journey to mastering SQL from basics to advanced co
 - 🏗️ Real-world mini projects using SQL
 - 💡 Practical query writing and optimization practice
 
-The goal is to become confident in SQL for backend development, data analysis, and technical interviews.
+Demonstrates practical SQL skills through structured learning, query optimization, LeetCode challenges, and real-world projects.
 
 ---
