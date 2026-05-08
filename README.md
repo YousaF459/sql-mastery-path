@@ -1,6 +1,6 @@
 # SQL Mastery Path
 
-A structured SQL learning and practice repository focused on building strong database fundamentals through consistent hands-on learning, problem-solving, and real-world projects.
+A hands-on collection of SQL concepts, optimized queries, interview problems, and database-focused projects.
 
 ---
 
