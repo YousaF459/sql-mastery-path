@@ -93,9 +93,21 @@ GROUP BY a.machine_id;
 -- Details
 /*
 
+- First we will do Join so two copies of same table are made Conceptualy.
+- second now cross join is done for each row in left table.
+- now using on we filter on different condition.
+- after that we do group by on filtered rows.
+- avg() willl go do differnce first adn tehn caluclate average.
+
 */
 
 -- Execution Order
 /*
+
+1- First two tables are amde conceptualy.
+2- Cross join is done on each left table row
+3- using on we filter what we want.
+4- Group by will make buckets .
+5- isinde buckets we perform average() function.
 
 */
